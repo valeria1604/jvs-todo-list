@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>TODO-list by Valeria</h1> 
+    <h1>TODO-list by Valeria</h1>
+    
+    <div class="controls">
+        <button onclick="sortTasksAlphabetically()">Sort A-Z</button>
+        <button onclick="sortTasksByDate()">Sort by Date</button>
+        <button class="clear-btn" onclick="clearAllTasks()">Clear All</button>
+    </div>
+
     <div class="todo-container">
         <input type="text" id="task-input" placeholder="What you need to do?">
-        <button onclick="addTask()">Add</button>
+        <button id="add-button" onclick="addTask()">Add</button>
         <ul id="task-list"></ul>
     </div>
 

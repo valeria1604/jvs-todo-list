@@ -1,68 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap');
 
-body {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 100;
-    font-style: normal;
-    background: radial-gradient(circle, #ff7e5f, #ffbd8a);
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-}
-
-.todo-container {
-    background: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
-}
-
-.todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
-}
-
-.todo-item.completed {
-    text-decoration: line-through;
-    color: gray;
+:root {
+  scroll-behavior: smooth;
+  --main-text-font: "Varela Round", sans-serif;
+  --main-button-color: #d76745;
+  --light-theme-color: beige;
+  --white-color: white;
+  --item-completed-color: gray;
+  --hover-button-color: rgb(203, 64, 26);
+  --hover-text-color: var(--white-color);
+  --add-button-color: rgb(203, 64, 26);
+  --add-button-hover-color: #f99026;
+  --complete-btn-color: #efae4d;
+  --background-gradient-start: #ff7e5f;
+  --background-gradient-end: #ffcb81;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-}
-
-button.complete-btn {
-    background-color: #4caf50;
-    margin-right: 5px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-
-.btn{
     border-radius: 10px;
-    background-color: #d76745;
-    color:beige;
-} */
-
-
-button {
-    border-radius: 10px;
-    background-color: #d76745;
-    color:beige;
+    background-color: var(--main-button-color);
+    font-family: var(--main-text-font);
+    color: var(--light-theme-color);
     border: none;
     padding: 5px;
     padding-inline: 20px;
@@ -70,8 +29,8 @@ button {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle, #ff7e5f, #ffbd8a);
+    font-family: var(--main-text-font);
+    background: radial-gradient(circle, var(--background-gradient-start), var(--background-gradient-end));
     display: flex;
     padding-top: 50px;
     flex-direction: column;      
@@ -79,19 +38,48 @@ body {
     align-items: center;
 }
 
-h1{
-    color: white;
-    font-family: "Inter", sans-serif;
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    background-color: var(--light-theme-color);
+    font-family: var(--main-text-font);
+    color: var(--add-button-hover-color);
+}
+
+button:hover {
+    background-color: var(--hover-button-color);
+    font-family: var(--main-text-font);
+    color: var(--hover-text-color);
+}
+
+#add-button {
+    background-color: var(--white-color);
+    color: var(--add-button-color);
+}
+
+#add-button:hover {
+    background-color: var(--white-color);
+    color: var(--add-button-hover-color);
+}
+
+h1 {
+    color: var(--white-color);
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
 }
 
 .todo-container {
-    background: #fff;
-    border-radius: 20px;
+    background-color: var(--white-color);
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    text-align: center;
     width: 300px;
 }
 
@@ -104,13 +92,12 @@ h1{
 
 .todo-item.completed {
     text-decoration: line-through;
-    color: gray;
+    color: var(--item-completed-color);
 }
 
-
 button.complete-btn {
-    background-color: #ffd199;
-    color: #fff;
+    background-color: var(--white-color);
+    color: var(--complete-btn-color);
     margin-right: 5px;
 }
 
